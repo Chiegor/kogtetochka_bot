@@ -55,41 +55,29 @@ public class Bot extends TelegramLongPollingBot { // есть еще вариа�
 
     private void startBot(long chatId, String userName) {
         StringBuilder sb = new StringBuilder();
-        String answer = "Привет поросеночек " + userName;
+        String answer = "Привет поросеночек " + userName + "\n";
         sb.append(answer);
         String text = "STANDART\n" +
                 "\n" +
                 "Входит в стоимость:\n" +
-                "\n" +
                 "1. Однотонный маникюр\n" +
-                "\n" +
                 "2. Ремонт до 4х ногтей\n" +
-                "\n" +
                 "3. Снятие старого покрытия\n" +
-                "\n" +
                 "4. Выравнивание гелем/базой\n" +
-                "\n" +
                 "5. Массаж рук с кремом после процедуры \n" +
                 "PREMIUM\n" +
-                "\n" +
                 "Входит в стоимость:\n" +
-                "\n" +
                 "1. Маникюр STANDART\n" +
-                "\n" +
                 "2. Укрепление полигелем/акригелем\n" +
-                "\n" +
                 "3. Дизайн на ваш выбор \n" +
                 "VIP\n" +
-                "\n" +
                 "Входит в стоимость:\n" +
-                "\n" +
                 "1. Маникюр PREMIUM\n" +
-                "\n" +
                 "2. Моделирование ногтей\n" +
-                "\n" +
                 "3. Наращивание гелем ";
         sb.append(text);
         sendMessage(chatId, sb.toString());
+        log.info("Success reply command /start to user: " + userName);
     }
 
     private void sendMessage(long chatId, String textToSend) {
@@ -100,7 +88,7 @@ public class Bot extends TelegramLongPollingBot { // есть еще вариа�
             execute(message);
             log.info("Reply sent");
         } catch (TelegramApiException e) {
-            log.error(e.getMessage());
+            log.error("Send message error");
         }
     }
 }
