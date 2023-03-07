@@ -1,4 +1,4 @@
-package com.KogtetochkaaBot;
+package com.KogtetochkaaBot.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

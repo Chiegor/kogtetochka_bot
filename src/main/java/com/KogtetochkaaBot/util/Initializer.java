@@ -1,5 +1,6 @@
-package com.KogtetochkaaBot;
+package com.KogtetochkaaBot.util;
 
+import com.KogtetochkaaBot.service.Bot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
